@@ -29,5 +29,12 @@ docker-compose up -d
 - Wait until the 2 containers (MySql and SponsoredAds) will pulled and running.
 - After the 2 containers are up and running - you can use the Postman collection for testing the APIs
 
+Note: If you want running the application directly from IntelliJ IDEA you should follow this following steps:
+
+1. Start the MySQL container using the command: `docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=sponsoredAds -p 3306:3306 mysql`.
+
+2. Update the `spring.datasource.url` property in your `application.properties` file to point to the MySQL container: `spring.datasource.url=jdbc:mysql://localhost:3306/sponsoredAdsDB?createDatabaseIfNotExist=true`.
+
+3. Finally, after the MySQL container is up and running,  click the "Run" or "Debug" button in IntelliJ IDEA to start the application. 
 
 
