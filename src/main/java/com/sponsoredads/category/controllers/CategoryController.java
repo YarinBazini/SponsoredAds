@@ -16,12 +16,11 @@ public class CategoryController {
     @GetMapping("/all")
     public List<Category> getAllCategories()
     {
-        return categoryService.getAllCategories();
+        return this.categoryService.getAllCategories();
     }
 
     @PostMapping()
-    public void createCategory(@RequestParam String name)
-    {
-        categoryService.createCategory(name);
+    public void createCategory(@RequestParam String name) {
+        this.categoryService.createCategory(name);
     }
 }
