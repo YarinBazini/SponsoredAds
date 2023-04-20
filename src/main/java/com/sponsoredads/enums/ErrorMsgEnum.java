@@ -8,7 +8,9 @@ public enum ErrorMsgEnum {
 
     CATEGORY_ALREADY_EXIST("category %s already exist."),
 
-    SERIAL_NUMBER_ALREADY_EXIST("Serial number %s already exist.");
+    SERIAL_NUMBER_ALREADY_EXIST("Serial number %s already exist."),
+
+    SERIAL_NUMBER_NOT_EXIST("Serial number %s not exist.");
 
 
     private final String msg;
