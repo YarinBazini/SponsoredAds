@@ -1,0 +1,27 @@
+version: '3.9'
+
+networks:
+  sponsoredAds-network:
+    driver: bridge
+
+services:
+  mysql-db:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: sponsoredAds
+    ports:
+      - "3306:3306"
+    networks:
+      - sponsoredAds-network
+
+  sponsored-ads-service:
+    build: .
+    image: sponsored-ads:latest
+    restart: always
+    ports:
+      - "8083:8083"
+    depends_on:
+      - mysql-db
+    networks:
+      - sponsoredAds-network
