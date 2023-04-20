@@ -23,4 +23,9 @@ public class ProductController {
     public void createNewProduct(@RequestBody Product product, @RequestParam String categoryName) throws SponsoredAdsException {
         this.productService.createProduct(product, categoryName);
     }
+
+    @GetMapping("/serve-ad")
+    public Product serveAd(@RequestParam String categoryName) throws SponsoredAdsException {
+        return this.productService.serveAd(categoryName);
+    }
 }

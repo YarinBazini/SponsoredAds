@@ -39,4 +39,9 @@ public class Campaign {
     )
     private List<Product> products = new ArrayList<>();
 
+    public boolean isActive() {
+        LocalDate currentDate = LocalDate.now();
+        LocalDate startDateMinus10Days = currentDate.minusDays(10);
+        return startDate.compareTo(startDateMinus10Days) >= 0 && startDate.compareTo(currentDate) <= 0;
+    }
 }

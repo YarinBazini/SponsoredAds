@@ -10,7 +10,9 @@ public enum ErrorMsgEnum {
 
     SERIAL_NUMBER_ALREADY_EXIST("Serial number %s already exist."),
 
-    SERIAL_NUMBER_NOT_EXIST("Serial number %s not exist.");
+    SERIAL_NUMBER_NOT_EXIST("Serial number %s not exist."),
+
+    NO_ACTIVE_PROMOTED_PRODUCT_FOUND("No active promoted product was found.");
 
 
     private final String msg;
