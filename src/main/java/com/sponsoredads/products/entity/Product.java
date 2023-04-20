@@ -38,4 +38,13 @@ public class Product {
     @ToString.Exclude
     @JsonIgnore
     private List<Campaign> campaigns = new ArrayList<>();
+
+    public boolean containsActiveCampaign() {
+        for (Campaign campaign : campaigns) {
+            if (campaign.isActive()) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
