@@ -8,13 +8,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.sponsoredads.utils.Utils.*;
+
 @RestController
-@RequestMapping("/product")
+@RequestMapping(PRODUCT_CONTROLLER_MAPPING)
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
 
-    @GetMapping("/all")
+    @GetMapping(GET_ALL_PRODUCTS_MAPPING)
     public List<Product> getAllProducts() {
         return this.productService.getAllProducts();
     }
@@ -24,7 +26,7 @@ public class ProductController {
         this.productService.createProduct(product, categoryName);
     }
 
-    @GetMapping("/serve-ad")
+    @GetMapping(SERVE_AD_MAPPING)
     public Product serveAd(@RequestParam String categoryName) throws SponsoredAdsException {
         return this.productService.serveAd(categoryName);
     }

@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.sponsoredads.utils.Utils.INIT_CONTROLLER_MAPPING;
+
 @RestController
-@RequestMapping("/init")
+@RequestMapping(INIT_CONTROLLER_MAPPING)
 @RequiredArgsConstructor
 public class InitDBController {
     private final CategoryService categoryService;
@@ -30,7 +32,7 @@ public class InitDBController {
         for (String category: categories) {
             this.categoryService.createCategory(category);
         }
-        for (int i = 0; i<20; i++) {
+        for (int i = 0; i < 20; i++) {
             Product product = Product.builder().
                     serialNumber(String.valueOf(i)).
                     title(String.valueOf(i)).
