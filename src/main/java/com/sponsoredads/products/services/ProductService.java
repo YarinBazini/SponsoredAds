@@ -1,6 +1,5 @@
 package com.sponsoredads.products.services;
 
-import com.sponsoredads.category.entity.Category;
 import com.sponsoredads.exceptions.SponsoredAdsException;
 import com.sponsoredads.products.entity.Product;
 

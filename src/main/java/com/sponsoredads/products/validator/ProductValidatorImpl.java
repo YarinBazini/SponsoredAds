@@ -14,7 +14,7 @@ public class ProductValidatorImpl implements ProductValidator {
 
     @Override
     public void validateProduct(Product product) throws SponsoredAdsException {
-        if(isSerialNumberExist(product.getSerialNumber())){
+        if (isSerialNumberExist(product.getSerialNumber())) {
             throw new SponsoredAdsException(ErrorMsgEnum.SERIAL_NUMBER_ALREADY_EXIST, product.getSerialNumber());
         }
     }

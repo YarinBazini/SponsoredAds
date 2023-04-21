@@ -11,6 +11,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.sponsoredads.utils.Utils.MAX_ACTIVE_CAMPAIGN_LEN;
+
 @Entity
 @Table(name = "campaigns")
 @NoArgsConstructor
@@ -41,7 +43,7 @@ public class Campaign {
 
     public boolean isActive() {
         LocalDate currentDate = LocalDate.now();
-        LocalDate startDateMinus10Days = currentDate.minusDays(10);
+        LocalDate startDateMinus10Days = currentDate.minusDays(MAX_ACTIVE_CAMPAIGN_LEN);
         return startDate.compareTo(startDateMinus10Days) >= 0 && startDate.compareTo(currentDate) <= 0;
     }
 }

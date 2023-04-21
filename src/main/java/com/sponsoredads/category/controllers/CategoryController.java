@@ -7,13 +7,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.sponsoredads.utils.Utils.CATEGORY_CONTROLLER_MAPPING;
+import static com.sponsoredads.utils.Utils.GET_ALL_CATEGORIES_MAPPING;
+
 @RestController
-@RequestMapping("/category")
+@RequestMapping(CATEGORY_CONTROLLER_MAPPING)
 @RequiredArgsConstructor
 public class CategoryController {
     private final CategoryService categoryService;
 
-    @GetMapping("/all")
+    @GetMapping(GET_ALL_CATEGORIES_MAPPING)
     public List<Category> getAllCategories()
     {
         return this.categoryService.getAllCategories();

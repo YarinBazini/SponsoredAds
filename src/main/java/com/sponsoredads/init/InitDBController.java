@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.sponsoredads.utils.Utils.INIT_CONTROLLER_MAPPING;
+
 @RestController
-@RequestMapping("/init")
+@RequestMapping(INIT_CONTROLLER_MAPPING)
 @RequiredArgsConstructor
 public class InitDBController {
     private final CategoryService categoryService;
     private final ProductService productService;
-
 
     //This APi simply saves in the dataBase a bulk of categories and products.
     @PostMapping()
@@ -28,10 +29,10 @@ public class InitDBController {
         categories.add("Bank");
         categories.add("Food");
         categories.add("Snickers");
-        for(String category: categories){
+        for (String category: categories) {
             this.categoryService.createCategory(category);
         }
-        for(int i = 0; i<20; i++){
+        for (int i = 0; i < 20; i++) {
             Product product = Product.builder().
                     serialNumber(String.valueOf(i)).
                     title(String.valueOf(i)).

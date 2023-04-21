@@ -9,8 +9,6 @@ import com.sponsoredads.products.repositories.ProductsRepository;
 import com.sponsoredads.products.validator.ProductValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -39,15 +37,15 @@ public class ProductServiceImpl implements ProductService{
         Category category = this.categoryService.getCategoryByName(categoryName);
         List<Product> activeProductsWithHighestActiveBid = this.productsRepository.serveAds(category.getName());
 
-        if(activeProductsWithHighestActiveBid.size() != 0) {
+        if (activeProductsWithHighestActiveBid.size() != 0) {
             return activeProductsWithHighestActiveBid.get(0);
         }
-        else{
+        else {
             activeProductsWithHighestActiveBid = this.productsRepository.getProductWithMaxBidOnActiveCampaign();
-            if(activeProductsWithHighestActiveBid.size() != 0){
+            if (activeProductsWithHighestActiveBid.size() != 0) {
                 return activeProductsWithHighestActiveBid.get(0);
             }
-            else{
+            else {
                 throw new SponsoredAdsException(ErrorMsgEnum.NO_ACTIVE_PROMOTED_PRODUCT_FOUND);
             }
         }
