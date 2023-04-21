@@ -1,7 +1,5 @@
 package com.sponsoredads.products.repositories;
 
-import com.sponsoredads.campaign.entity.Campaign;
-import com.sponsoredads.category.entity.Category;
 import com.sponsoredads.products.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

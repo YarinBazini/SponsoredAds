@@ -3,7 +3,6 @@ package com.sponsoredads.category.services;
 import com.sponsoredads.category.entity.Category;
 import com.sponsoredads.category.repositories.CategoryRepository;
 import com.sponsoredads.enums.ErrorMsgEnum;
-import com.sponsoredads.exceptions.ErrorMsg;
 import com.sponsoredads.exceptions.SponsoredAdsException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

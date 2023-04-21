@@ -34,7 +34,7 @@ public class CampaignServiceImpl implements CampaignService{
 
     private List<Product> getProductsListFromCampaignCreateRequestDto(CampaignCreateRequestDto campaignCreateRequestDto) throws SponsoredAdsException {
         List<Product> products = new ArrayList<>();
-        for(String serialNum : campaignCreateRequestDto.getProductsSerialNumbers()){
+        for (String serialNum : campaignCreateRequestDto.getProductsSerialNumbers()) {
             products.add(this.productsRepository.findProductBySerialNumber(serialNum).orElseThrow(() -> {
                 return new SponsoredAdsException(ErrorMsgEnum.SERIAL_NUMBER_NOT_EXIST, serialNum);
             }));
@@ -44,7 +44,7 @@ public class CampaignServiceImpl implements CampaignService{
     }
 
     private void updateProductCampaign(Campaign campaign) {
-        for(Product product : campaign.getProducts()){
+        for (Product product : campaign.getProducts()) {
             product.getCampaigns().add(campaign);
             this.productsRepository.save(product);
         }
