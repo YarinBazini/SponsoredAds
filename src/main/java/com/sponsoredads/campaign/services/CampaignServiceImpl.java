@@ -20,10 +20,11 @@ public class CampaignServiceImpl implements CampaignService{
     private final ProductsRepository productsRepository;
 
     @Override
-    public void createNewCampaign(CampaignCreateRequestDto campaignCreateRequestDto) throws SponsoredAdsException {
+    public Campaign createNewCampaign(CampaignCreateRequestDto campaignCreateRequestDto) throws SponsoredAdsException {
         Campaign campaign = this.createCampaignFromCampaignCreateRequestDto(campaignCreateRequestDto);
         this.updateProductCampaign(campaign);
         this.campaignRepository.save(campaign);
+        return campaign;
     }
 
     @Override

@@ -7,6 +7,6 @@ import com.sponsoredads.exceptions.SponsoredAdsException;
 import java.util.List;
 
 public interface CampaignService {
-    void createNewCampaign(CampaignCreateRequestDto campaignCreateRequestDto) throws SponsoredAdsException;
+    Campaign createNewCampaign(CampaignCreateRequestDto campaignCreateRequestDto) throws SponsoredAdsException;
     List<Campaign> getAllCampaigns();
 }

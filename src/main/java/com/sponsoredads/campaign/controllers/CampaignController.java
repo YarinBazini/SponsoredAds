@@ -16,8 +16,8 @@ public class CampaignController {
     private final CampaignService campaignService;
 
     @PostMapping()
-    public void createCampaign(@RequestBody CampaignCreateRequestDto campaignCreateRequestDto) throws SponsoredAdsException {
-        this.campaignService.createNewCampaign(campaignCreateRequestDto);
+    public Campaign createCampaign(@RequestBody CampaignCreateRequestDto campaignCreateRequestDto) throws SponsoredAdsException {
+        return this.campaignService.createNewCampaign(campaignCreateRequestDto);
     }
 
     @GetMapping("/all")
