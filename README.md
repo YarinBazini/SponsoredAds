@@ -89,4 +89,9 @@ The server will upload in port 8083.
                 "title": "Ball",
                 "price": 100
               }
-    - Response should be 200 unless: serial num already exist or category name is not valid. 
+    - Response should be 200 unless: serial num already exist or category name is not valid.
+    
+   8. Get all products:
+    - End point: sponsoredAds/product/all
+    - Method: GET
+    - Response : Array of all the products from the db (Json).
